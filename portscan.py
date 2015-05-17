@@ -10,6 +10,7 @@ import socket
 import string
 import sys
 import os
+import datetime
 
 def checkPort(ip, port):
 	try:
@@ -73,12 +74,16 @@ def checkPort(ip, port):
 			print (str(port)+"\tOPEN\tLINUX HA")
 		else:
 			print (str(port)+"\tOPEN")
+		if (logging==True):
+			fw.write(target+","+str(port)+",OPEN\n")
 	except:
 		print (str(port)+"\tCLOSED")
+		if (logging==True):
+			fw.write(target+","+str(port)+",CLOSED\n")
 
 
 def printHeader(ip,portrange):
-	print ("\n** CHECKING "+ip+"\tPORT: "+portrange+ " **\n")
+	print ("\n** CHECKING "+ip+" PORT: "+portrange+ " **\n")
 
 	print ("PORT\tSTATUS\tFUNCTION")
 	print ("----\t------\t--------")
@@ -86,10 +91,26 @@ def printHeader(ip,portrange):
 parser = argparse.ArgumentParser(description='Simple Portscanner')
 parser.add_argument('-t','--target', help='Host IP or name', required=True)
 parser.add_argument('-p','--port', help='Port (80) or List of ports (80,88,443) or portange(80-90)', required=True)
+parser.add_argument('-l','--log', help='TRUE creates a comma-seperated-logfile')
 args = vars(parser.parse_args())
 
 target = str(args['target'])
 port = str(args['port'])
+log = str(args['log'])
+
+if (log==None):
+    logging=False
+elif ((log=="True") or (log=="TRUE") or (log=="true")):
+    logging=True
+elif ((log=="False") or (log=="FALSE") or (log=="false")):
+    logging=False
+else:
+    logging=False
+
+ts= str(datetime.date.today())
+if (logging==True):
+    fw = open('portscan_'+ts+'.csv','w')
+    fw.write("Host,Port,Status\n")
 
 if "-" in port:
 	printHeader(target,port)
