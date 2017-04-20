@@ -1,10 +1,10 @@
-#PORTSCAN
+# PORTSCAN
 
-##Overview
+## Overview
 
 This script will scan for a given port or a port-range on a single host.
 
-##Usage
+## Usage
 
 	-t, --target [TARGET IP or HOSTNAME]
 	The target host you want to scan
@@ -18,7 +18,7 @@ This script will scan for a given port or a port-range on a single host.
 	-h, --help
     Shows a quick help-message
 
-##Example
+## Example
 
 Scanning for HTTP or HTTPS on the server example.org
 
@@ -41,6 +41,6 @@ Scanning for SSH port on 192.168.0.1
 
 	$ ./portscan.py -t www.example.org -p 22
 
-##Contact
+## Contact
 
 You can contact me via mail: [mail@sysadmin-log.de](mail@sysadmin-log.de).
