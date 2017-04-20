@@ -3,8 +3,8 @@
 # Simple Portscan
 # Christoph Franke
 # mail@cfranke.org
-# 11.12.2015
-# Version 0.1
+# 20.04.2017
+# Version 0.5
 
 import socket
 import argparse
