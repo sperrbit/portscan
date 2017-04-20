@@ -12,9 +12,6 @@ This script will scan for a given port or a port-range on a single host.
 	-p, --port [PORTNUMBER]
 	The port(s) or Portrange you want to scan. E.g. 80 or 80,443 or 80-100
 
-	-l, --logging [TRUE or FALSE]
-    Enables or disables logging. Default is False. Logging will create a CSV-File in the script dir.
-
 	-h, --help
     Shows a quick help-message
 
@@ -26,12 +23,12 @@ Scanning for HTTP or HTTPS on the server example.org
 
 Output:
 
-	** CHECKING www.example.org	PORT: 80,443 **
+	** Checking www.example.orbg **
 
-	PORT	STATUS	FUNCTION
-	----	------	--------
-	80		OPEN	HTTP
-	443		OPEN	HTTPS
+	PORT	STATUS
+	----	------
+	80	OPEN
+	443	OPEN
 
 Scanning for the first 5 Ports on 192.168.0.1
 
