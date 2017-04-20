@@ -22,12 +22,10 @@ def checkPort(ip, port):
 parser = argparse.ArgumentParser(description='Simple Portscanner')
 parser.add_argument('-t','--target',help='Hostname or IPv4 address', required=True)
 parser.add_argument('-p','--port',help='Port or Portrange', required=True)
-parser.add_argument('-l','--logging',help='enable logging', required=False, default='false')
 args = vars(parser.parse_args())
 
 target = str(args['target'])
 port = str(args['port'])
-log = str(args['logging'])
 
 print ("** Checking "+str(target)+" **\n")
 
