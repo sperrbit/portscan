@@ -23,7 +23,7 @@ Scanning for HTTP or HTTPS on the server example.org
 
 Output:
 
-	** Checking www.example.orbg **
+	** Checking www.example.org **
 
 	PORT	STATUS
 	----	------
